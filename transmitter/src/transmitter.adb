@@ -13,9 +13,9 @@ is
    Inter_Frame_Period : constant
      array (DW1000.Driver.Data_Rates)
      of Ada.Real_Time.Time_Span :=
-       (Data_Rate_110k => Microseconds (12500), --  80 pkt/s
-        Data_Rate_850k => Microseconds (4000),  --  250 pkt/s
-        Data_Rate_6M8  => Microseconds (3125)); --  320 pkt/s
+       (Data_Rate_110k => Microseconds (15_625), --  64 pkt/s
+        Data_Rate_850k => Microseconds (5_000),  --  200 pkt/s
+        Data_Rate_6M8  => Microseconds (4_000)); --  250 pkt/s
 
    Tx_Packet      : DW1000.Types.Byte_Array (1 .. 125);
 
@@ -116,9 +116,6 @@ begin
          DecaDriver.Tx.Transmitter.Set_Tx_Data
            (Data   => Tx_Packet,
             Offset => 0);
-         DecaDriver.Tx.Transmitter.Set_Tx_Frame_Length
-           (Length => Tx_Packet'Length,
-            Offset => 0);
 
          Update_LCD;
 
@@ -128,7 +125,11 @@ begin
 
       Next_Tx_Time := Next_Tx_Time + Inter_Frame_Period (Current_Config.Data_Rate);
 
-      DecaDriver.Tx.Transmitter.Start_Tx_Immediate (Rx_After_Tx => False);
+      DecaDriver.Tx.Transmitter.Set_Tx_Frame_Length
+        (Length => Tx_Packet'Length + 2, --  2 extra bytes for FCS
+         Offset => 0);
+      DecaDriver.Tx.Transmitter.Start_Tx_Immediate (Rx_After_Tx     => False,
+                                                    Auto_Append_FCS => True);
       DecaDriver.Tx.Transmitter.Wait_For_Tx_Complete;
 
    end loop;

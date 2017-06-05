@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 25" line=" 7" >
+      <vfs_project />
+      <vfs_file>/home/dan/default.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000-rssi-scan/transmitter/dw1000_rssi_scan_tx.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 19" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000-rssi-scan/transmitter/dw1000_rssi_scan_tx.gpr</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000-rssi-scan/transmitter/dw1000_rssi_scan_tx.gpr</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

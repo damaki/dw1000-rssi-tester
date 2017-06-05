@@ -1,6 +1,6 @@
 project Dw1000_Rssi_Scan_Tx is
 
-   for Source_Dirs use (".", "src", "../EVB1000/src", "../DW1000/src", "../DW1000/bsp-examples/evb1000");
+   for Source_Dirs use (".", "src", "../EVB1000/src", "../DW1000/src", "../DW1000/bsp-examples/evb1000", "../common");
    for Main use ("transmitter.adb");
    for Source_Files use ("configurations.adb", "configurations.ads", "decadriver.ads", "decadriver_config.ads", "decadriver-core.adb", "decadriver-core.ads", "decadriver-rx.adb", "decadriver-rx.ads", "decadriver-tx.adb", 
       "decadriver-tx.ads", "dw1000.ads", "dw1000-bsp.adb", "dw1000-bsp.ads", "dw1000-constants.ads", "dw1000-driver.adb", "dw1000-driver.ads", "dw1000-generic_ro_register_driver.adb", 
@@ -10,6 +10,8 @@ project Dw1000_Rssi_Scan_Tx is
       "evb1000-lcd.adb", "evb1000-lcd.ads", "evb1000-led.adb", "evb1000-led.ads", "evb1000-s1.adb", "evb1000-s1.ads", "evb1000_tx_power.ads", "stm32-adc.ads", "stm32.ads", "stm32-afio.ads", "stm32-bkp.ads", "stm32-can.ads", "stm32-crc.ads", 
       "stm32-dac.ads", "stm32-dbg.ads", "stm32-dma.ads", "stm32-exti.ads", "stm32-flash.ads", "stm32-gpio.ads", "stm32-i2c.ads", "stm32-iwdg.ads", "stm32-nvic.ads", "stm32-pwr.ads", "stm32-rcc.ads", "stm32-rtc.ads", "stm32-spi.ads", 
       "stm32-tim.ads", "stm32-usart.ads", "stm32-usb_otg.ads", "stm32-wwdg.ads", "transmitter.adb");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
 
    package Ide is
       for Gnat use "arm-eabi-gnat";
@@ -29,9 +31,6 @@ project Dw1000_Rssi_Scan_Tx is
    package Linker is
       for Default_Switches ("ada") use ("-g", "-Wl,--gc-sections");
    end Linker;
-
-   for Object_Dir use "obj";
-   for Exec_Dir use "bin";
 
 end Dw1000_Rssi_Scan_Tx;
 

@@ -1,0 +1,32 @@
+project Dw1000_Rssi_Scan_Rx is
+
+   for Languages use ("Ada", "C");
+   for Source_Dirs use (".", "src", "../EVB1000/src", "../EVB1000/usb/**", "../DW1000/src", "../DW1000/bsp-examples/evb1000", "../common");
+   for Main use ("receiver.adb");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
+
+   package Ide is
+      for Gnat use "arm-eabi-gnat";
+      for Gnatlist use "arm-eabi-gnatls";
+      for Debugger_Command use "arm-eabi-gdb";
+   end Ide;
+
+   package Linker is
+      for Default_Switches ("c") use ("-Wl,--gc-sections", "-g");
+      for Default_Switches ("ada") use ("-g", "-Wl,--gc-sections");
+   end Linker;
+
+   package Builder is
+      for Default_Switches ("ada") use ("--RTS=ravenscar-full-evb1000", "-j0", "-g");
+      for Executable ("receiver.adb") use "dw1000_rssi_scan_rx.elf";
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-O2", "-gnatn", "-funroll-loops", "-fdata-sections", "-ffunction-sections", "-g", "-gnat12", "-fcallgraph-info=su,da", "-gnatp");
+      for Default_Switches ("c") use ("-O2", "-funroll-loops", "-ffunction-sections", "-fdata-sections", "-g", "-ffreestanding", "-mcpu=cortex-m3", "-mthumb", "-DSTM32F10X_CL", "-DUSE_EMBEDDED_PHY", "-DUSE_STDPERIPH_DRIVER", 
+         "-DVBUS_SENSING_ENABLED");
+   end Compiler;
+
+end Dw1000_Rssi_Scan_Rx;
+

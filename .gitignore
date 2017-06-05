@@ -1,2 +1,7 @@
 transmitter/obj
 transmitter/bin/*.elf
+transmitter/bin/*.bin
+receiver/obj
+receiver/bin/*.elf
+receiver/bin/*.bin
+
