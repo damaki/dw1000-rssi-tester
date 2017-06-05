@@ -1,0 +1,6 @@
+[submodule "EVB1000"]
+	path = EVB1000
+	url = https://github.com/damaki/EVB1000.git
+[submodule "DW1000"]
+	path = DW1000
+	url = https://github.com/damaki/DW1000.git
