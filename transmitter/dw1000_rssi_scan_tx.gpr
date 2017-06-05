@@ -19,7 +19,7 @@ project Dw1000_Rssi_Scan_Tx is
 
    package Builder is
       for Default_Switches ("ada") use ("-j0", "-g", "--RTS=ravenscar-full-evb1000");
-      for Executable ("transmitter.adb") use "dw100_rssi_scan_tx";
+      for Executable ("transmitter.adb") use "dw100_rssi_scan_tx.elf";
    end Builder;
 
    package Compiler is
