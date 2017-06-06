@@ -78,6 +78,7 @@ The transmitter and receiver must be configured to use the same settings
 at the top of the EVB1000 (to the left of the four LEDs).
 
 Switches 3 and 4 configure the data rate:
+
 |  3  |  4  | Data Rate |
 |:---:|:---:|:---------:|
 | Off | Off | 110 kbps  |
@@ -86,12 +87,14 @@ Switches 3 and 4 configure the data rate:
 | On  | On  | 6.81 Mbps |
 
 Switch 5 configures the PRF:
+
 |  5  |  PRF   |
 |:---:|:------:|
 | Off | 16 MHz |
 | On  | 64 MHz |
 
 Switches 6, 7, and 8 configure the channel (frequency):
+
 |  6  |  7  |  8  | Channel |
 |:---:|:---:|:---:|:-------:|
 | Off | Off | Off | 1       |
